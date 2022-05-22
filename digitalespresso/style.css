@@ -1,0 +1,42 @@
+body {
+  background-color: #bc5d2e;
+  font-family: Helvetica, sans-serif;
+  color: white;
+  margin: 0;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px 0 50px;
+  height: 80vh;
+}
+
+.home-title {
+  font-size: 70px;
+  font-weight: 900;
+}
+
+table {
+  border: solid white 1px;
+  width: 200px;
+}
+
+tr {
+  height: 40px;
+}
+
+th {
+  font-size: 20px;
+  text-align: left;
+}
+
+p {
+  width: 400px;
+  line-height: 30px;
+}
+
+.coffee-image {
+  width: 800px;
+}
