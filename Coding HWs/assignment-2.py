@@ -33,14 +33,12 @@ def relationship_status(from_member, to_member, social_graph):
         "no relationship" if neither fromMember nor toMember follow each other.
     '''
     # Write your code below this line
-    for from_following in social_graph[from_member]["following"]:
-        for to_following in social_graph[to_member]["following"]:
-            if from_following == to_member and to_following == from_member:
-                return "friends"
-            if from_following == to_member:
-                return "follower"
-            if to_following == from_member:
-                return "followed by"
+    if from_member in social_graph[to_member]["following"] and to_member in social_graph[from_member]["following"]:
+        return "friends"
+    elif from_member in social_graph[to_member]["following"]:
+        return "followed by"
+    elif to_member in social_graph[from_member]["following"]:
+        return "follower"
     return "no relationship"
 
 def tic_tac_toe(board):
@@ -123,8 +121,11 @@ def eta(first_stop, second_stop, route_map):
     if first_stop == second_stop:
         return total_time
     while current != second_stop:
+        print("current: " + current)
+        print("destination: " + second_stop)
         for x in route_map:
             if current == x[0]:
                 current = x[1]
                 total_time = total_time + route_map[x]["travel_time_mins"]
+                break
     return total_time
